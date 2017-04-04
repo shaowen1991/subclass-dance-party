@@ -21,7 +21,13 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
+  border:12px solid red;
+  border-radius:12px;
   position:absolute;
+}
+.popDancer{
+  border:15px solid;
+  border-radius:15px;
+  color: blue;
+  position:fixed;
 }
