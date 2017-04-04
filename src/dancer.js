@@ -7,13 +7,18 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   this.left = left;
   this.timeBetweenSteps = timeBetweenSteps;
 
-
   
   // makeDancer.prototype.step();
   // now that we have defined the dancer object, we can start setting up important parts of it by calling the methods we wrote
   // this one sets the position to some random default point within the body
   // makeDancer.prototype.setPosition(top, left);
 };
+
+makeDancer.prototype.lineUp = function() {
+  this.$node.animate({
+        top: 450
+  });
+}
 
 makeDancer.prototype.step = function() {
   // the basic dancer doesn't do anything interesting at all on each step,
@@ -31,4 +36,18 @@ makeDancer.prototype.setPosition = function(top, left) {
     left: left
   };
   this.$node.css(styleSettings);
+};
+
+makeDancer.prototype.split = function($bodyWidth) {
+  if (this.$node.css("left") < ($bodyWidth / 2)) {
+    this.$node.animate({
+      left: 100
+    });
+  }
+  else {
+    this.$node.animate({
+      left: $bodyWidth - 200
+    });
+  }
+
 };

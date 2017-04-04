@@ -13,7 +13,18 @@ makePopDancer.prototype = Object.create(makeDancer.prototype);
 makePopDancer.prototype.constructor = makePopDancer;
 // makePopDancer.prototype.oldStep = makeDancer.prototype.step.bind(this);
 makePopDancer.prototype.step = function() {
-  this.$node.effect( "shake", { direction: "up", times: 1, distance: 10}, this.timeBetweenSteps / 2 );
+	// this.$node.toggle("fade");
+  this.$node.animate({
+        width: 200,
+        height: 200
+      }, this.timeBetweenSteps / 2);
+  
+  this.$node.animate({
+        width: 50,
+        height: 50
+      }, this.timeBetweenSteps / 2);
+  
+  // this.$node.effect( "shake", { direction: "up", times: 1, distance: 10}, this.timeBetweenSteps / 2 );
   makeDancer.prototype.step.call(this);
   
 };
